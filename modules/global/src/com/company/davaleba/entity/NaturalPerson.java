@@ -2,9 +2,7 @@ package com.company.davaleba.entity;
 
 import com.haulmont.cuba.core.entity.StandardEntity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Table(name = "DAVALEBA_NATURAL_PERSON")
 @Entity(name = "davaleba_NaturalPerson")
@@ -14,8 +12,20 @@ public class NaturalPerson extends StandardEntity {
     @Column(name = "FIRST_NAME_AND_LAST_NAME")
     protected String firstNameAndLastName;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "APPLICATION_FOR_THE_PURCHASE_OF_A_CAR_ID")
+    protected ApplicationForThePurchaseOfACar applicationForThePurchaseOfACar;
+
     @Column(name = "TELEPHONE")
     protected String telephone;
+
+    public ApplicationForThePurchaseOfACar getApplicationForThePurchaseOfACar() {
+        return applicationForThePurchaseOfACar;
+    }
+
+    public void setApplicationForThePurchaseOfACar(ApplicationForThePurchaseOfACar applicationForThePurchaseOfACar) {
+        this.applicationForThePurchaseOfACar = applicationForThePurchaseOfACar;
+    }
 
     public String getTelephone() {
         return telephone;

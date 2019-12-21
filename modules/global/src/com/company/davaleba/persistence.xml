@@ -10,5 +10,6 @@
         <class>com.company.davaleba.entity.Car</class>
         <class>com.company.davaleba.entity.LegalEntity</class>
         <class>com.company.davaleba.entity.NaturalPerson</class>
+        <class>com.company.davaleba.entity.ApplicationForThePurchaseOfACar</class>
     </persistence-unit>
 </persistence>

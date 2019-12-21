@@ -3,10 +3,7 @@ package com.company.davaleba.entity;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Lob;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @NamePattern("%s|name")
 @Table(name = "DAVALEBA_LEGAL_ENTITY")
@@ -17,12 +14,24 @@ public class LegalEntity extends StandardEntity {
     @Column(name = "NAME")
     protected String name;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "APPLICATION_FOR_THE_PURCHASE_OF_A_CAR_ID")
+    protected ApplicationForThePurchaseOfACar applicationForThePurchaseOfACar;
+
     @Lob
     @Column(name = "IDENTIFICATION_NUMBER_AND_ADDRESS")
     protected String identificationNumberAndAddress;
 
     @Column(name = "TELEPHONE")
     protected String telephone;
+
+    public ApplicationForThePurchaseOfACar getApplicationForThePurchaseOfACar() {
+        return applicationForThePurchaseOfACar;
+    }
+
+    public void setApplicationForThePurchaseOfACar(ApplicationForThePurchaseOfACar applicationForThePurchaseOfACar) {
+        this.applicationForThePurchaseOfACar = applicationForThePurchaseOfACar;
+    }
 
     public String getTelephone() {
         return telephone;

@@ -3,10 +3,7 @@ package com.company.davaleba.entity;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @NamePattern("%s|name")
@@ -32,6 +29,17 @@ public class Car extends StandardEntity {
 
     @Column(name = "CAR_COST")
     protected String carCost;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "APPLICATION_FOR_THE_PURCHASE_OF_A_CAR_ID")
+    protected ApplicationForThePurchaseOfACar applicationForThePurchaseOfACar;
+
+    public ApplicationForThePurchaseOfACar getApplicationForThePurchaseOfACar() {
+        return applicationForThePurchaseOfACar;
+    }
+
+    public void setApplicationForThePurchaseOfACar(ApplicationForThePurchaseOfACar applicationForThePurchaseOfACar) {
+        this.applicationForThePurchaseOfACar = applicationForThePurchaseOfACar;
+    }
 
     public String getCarCost() {
         return carCost;
