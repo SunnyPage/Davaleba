@@ -4,5 +4,11 @@
 
         <class>com.company.davaleba.entity.Country</class>
         <class>com.company.davaleba.entity.CarManufacturers</class>
+        <class>com.company.davaleba.entity.Colour</class>
+        <class>com.company.davaleba.entity.CarModel</class>
+        <class>com.company.davaleba.entity.Assembly</class>
+        <class>com.company.davaleba.entity.Car</class>
+        <class>com.company.davaleba.entity.LegalEntity</class>
+        <class>com.company.davaleba.entity.NaturalPerson</class>
     </persistence-unit>
 </persistence>

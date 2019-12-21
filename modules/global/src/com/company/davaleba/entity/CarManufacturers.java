@@ -3,10 +3,7 @@ package com.company.davaleba.entity;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
@@ -26,6 +23,28 @@ public class CarManufacturers extends StandardEntity {
 
     @OneToMany(mappedBy = "carManufacturers")
     protected List<Country> country;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "MODEL_ID")
+    protected CarModel model;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CAR_ID")
+    protected Car car;
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
+
+    public CarModel getModel() {
+        return model;
+    }
+
+    public void setModel(CarModel model) {
+        this.model = model;
+    }
 
     public String getManufacturerCode() {
         return manufacturerCode;
