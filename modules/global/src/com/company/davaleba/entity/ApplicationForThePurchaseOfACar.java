@@ -8,6 +8,7 @@ import com.haulmont.cuba.security.entity.User;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Table(name = "DAVALEBA_APPLICATION_FOR_THE_PURCHASE_OF_A_CAR")
 @Entity(name = "davaleba_ApplicationForThePurchaseOfACar")
@@ -29,6 +30,18 @@ public class ApplicationForThePurchaseOfACar extends StandardEntity {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "MANAGER_ID")
     protected User manager;
+
+    @OnDelete(DeletePolicy.CASCADE)
+    @OneToMany(mappedBy = "applicationForThePurchaseOfACar")
+    protected List<LegalEntity> legalEntityAndNaturalPerson;
+
+    public List<LegalEntity> getLegalEntityAndNaturalPerson() {
+        return legalEntityAndNaturalPerson;
+    }
+
+    public void setLegalEntityAndNaturalPerson(List<LegalEntity> legalEntityAndNaturalPerson) {
+        this.legalEntityAndNaturalPerson = legalEntityAndNaturalPerson;
+    }
 
     public User getManager() {
         return manager;
