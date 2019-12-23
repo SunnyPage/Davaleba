@@ -3,5 +3,6 @@
     <menu id="application-davaleba" insertBefore="administration">
         <item screen="davaleba_ApplicationForThePurchaseOfACar.browse"/>
         <item screen="davaleba_Car.browse"/>
+        <item screen="davaleba_Counterparty.browse"/>
     </menu>
 </menu-config>

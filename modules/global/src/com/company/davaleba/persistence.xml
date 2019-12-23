@@ -9,7 +9,7 @@
         <class>com.company.davaleba.entity.Assembly</class>
         <class>com.company.davaleba.entity.Car</class>
         <class>com.company.davaleba.entity.LegalEntity</class>
-        <class>com.company.davaleba.entity.NaturalPerson</class>
+        <class>com.company.davaleba.entity.IndividualPerson</class>
         <class>com.company.davaleba.entity.ApplicationForThePurchaseOfACar</class>
         <class>com.company.davaleba.entity.Counterparty</class>
     </persistence-unit>

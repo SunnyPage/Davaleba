@@ -25,4 +25,6 @@
         <property name="assembly" view="_minimal"/>
         <property name="applicationForThePurchaseOfACar" view="_minimal"/>
     </view>
+    <view entity="davaleba_Counterparty" name="counterparty-view" extends="_local"/>
+    <view entity="davaleba_Counterparty" name="counterparty-view_1" extends="_local"/>
 </views>

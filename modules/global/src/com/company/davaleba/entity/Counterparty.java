@@ -1,10 +1,14 @@
 package com.company.davaleba.entity;
 
+import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
-import javax.persistence.*;
-import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Lob;
+import javax.persistence.Table;
 
+@NamePattern("%s|name")
 @Table(name = "DAVALEBA_COUNTERPARTY")
 @Entity(name = "davaleba_Counterparty")
 public class Counterparty extends StandardEntity {
@@ -14,11 +18,22 @@ public class Counterparty extends StandardEntity {
     @Column(name = "IDENTIFICATION_NUMBER_AND_ADDRESS")
     protected String identificationNumberAndAddress;
 
+    @Column(name = "NAME")
+    protected String name;
+
     @Column(name = "TELEPHONE")
     protected String telephone;
 
     @Column(name = "FIRST_NAME_AND_LAST_NAME")
     protected String firstNameAndLastName;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String getFirstNameAndLastName() {
         return firstNameAndLastName;

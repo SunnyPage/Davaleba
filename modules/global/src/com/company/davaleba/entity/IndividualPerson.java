@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Table(name = "DAVALEBA_NATURAL_PERSON")
 @Entity(name = "davaleba_NaturalPerson")
-public class NaturalPerson extends StandardEntity {
+public class IndividualPerson extends StandardEntity {
     private static final long serialVersionUID = -3271034060908410516L;
 
     @Column(name = "FIRST_NAME_AND_LAST_NAME")
