@@ -1,6 +1,5 @@
 package com.company.davaleba.entity;
 
-import com.haulmont.chile.core.annotations.Composition;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.cuba.core.entity.annotation.OnDelete;
 import com.haulmont.cuba.core.global.DeletePolicy;
@@ -14,11 +13,10 @@ import java.math.BigDecimal;
 public class ApplicationForThePurchaseOfACar extends StandardEntity {
     private static final long serialVersionUID = 6756172202595475212L;
 
-    @Composition
     @OnDelete(DeletePolicy.CASCADE)
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CAR_ID")
-    protected LegalEntity car;
+    protected Car car;
 
     @Column(name = "CAR_PAID")
     protected Boolean carPaid;
@@ -33,6 +31,14 @@ public class ApplicationForThePurchaseOfACar extends StandardEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "COUNTERPARTY_ID")
     protected Counterparty counterparty;
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
+
+    public Car getCar() {
+        return car;
+    }
 
     public void setCounterparty(Counterparty counterparty) {
         this.counterparty = counterparty;
@@ -60,14 +66,6 @@ public class ApplicationForThePurchaseOfACar extends StandardEntity {
 
     public void setCarPaid(Boolean carPaid) {
         this.carPaid = carPaid;
-    }
-
-    public void setCar(LegalEntity car) {
-        this.car = car;
-    }
-
-    public LegalEntity getCar() {
-        return car;
     }
 
 }

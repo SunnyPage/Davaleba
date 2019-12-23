@@ -4,7 +4,6 @@ import com.company.davaleba.entity.ApplicationForThePurchaseOfACar;
 import com.haulmont.cuba.core.Persistence;
 import com.haulmont.cuba.core.Query;
 import org.springframework.stereotype.Component;
-
 import javax.inject.Inject;
 import java.util.UUID;
 
@@ -17,9 +16,9 @@ public class NumberOfDocumentsBean {
 
     public Integer GetNumberOfDocuments(UUID CounterpartyId)
     {
-        Query query = persistence.getEntityManager().createQuery(
-                "select count from ApplicationForThePurchaseOfACar o where o.counterparty = CounterpartyId");
-        query.setParameter("CounterpartyId", CounterpartyId);
-        return (Integer) query.getFirstResult();
+        //Query query = persistence.getEntityManager().createQuery(
+        //        "select count(*) from ApplicationForThePurchaseOfACar where counterparty = CounterpartyId");
+        //query.setParameter("CounterpartyId", CounterpartyId);
+        return (Integer)0;// query.getFirstResult();
     }
 }
