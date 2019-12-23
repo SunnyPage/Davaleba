@@ -1,0 +1,1 @@
+alter table DAVALEBA_APPLICATION_FOR_THE_PURCHASE_OF_A_CAR drop column CAR_ID__U35809 cascade ;
