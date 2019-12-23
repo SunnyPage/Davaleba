@@ -10,9 +10,6 @@ import java.util.List;
 public class Counterparty extends StandardEntity {
     private static final long serialVersionUID = 831304745236991229L;
 
-    @OneToMany(mappedBy = "counterparty")
-    protected List<ApplicationForThePurchaseOfACar> applicationForThePurchaseOfACar;
-
     @Lob
     @Column(name = "IDENTIFICATION_NUMBER_AND_ADDRESS")
     protected String identificationNumberAndAddress;
@@ -47,11 +44,4 @@ public class Counterparty extends StandardEntity {
         this.identificationNumberAndAddress = identificationNumberAndAddress;
     }
 
-    public List<ApplicationForThePurchaseOfACar> getApplicationForThePurchaseOfACar() {
-        return applicationForThePurchaseOfACar;
-    }
-
-    public void setApplicationForThePurchaseOfACar(List<ApplicationForThePurchaseOfACar> applicationForThePurchaseOfACar) {
-        this.applicationForThePurchaseOfACar = applicationForThePurchaseOfACar;
-    }
 }

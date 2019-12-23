@@ -32,16 +32,20 @@ public class ApplicationForThePurchaseOfACar extends StandardEntity {
     @JoinColumn(name = "COUNTERPARTY_ID")
     protected Counterparty counterparty;
 
+    public void setCounterparty(Counterparty counterparty) {
+        this.counterparty = counterparty;
+    }
+
+    public Counterparty getCounterparty() {
+        return counterparty;
+    }
+
     public void setCar(Car car) {
         this.car = car;
     }
 
     public Car getCar() {
         return car;
-    }
-
-    public void setCounterparty(Counterparty counterparty) {
-        this.counterparty = counterparty;
     }
 
     public User getManager() {
