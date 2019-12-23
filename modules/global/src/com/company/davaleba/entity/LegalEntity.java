@@ -14,24 +14,12 @@ public class LegalEntity extends StandardEntity {
     @Column(name = "NAME")
     protected String name;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "APPLICATION_FOR_THE_PURCHASE_OF_A_CAR_ID")
-    protected ApplicationForThePurchaseOfACar applicationForThePurchaseOfACar;
-
     @Lob
     @Column(name = "IDENTIFICATION_NUMBER_AND_ADDRESS")
     protected String identificationNumberAndAddress;
 
     @Column(name = "TELEPHONE")
     protected String telephone;
-
-    public ApplicationForThePurchaseOfACar getApplicationForThePurchaseOfACar() {
-        return applicationForThePurchaseOfACar;
-    }
-
-    public void setApplicationForThePurchaseOfACar(ApplicationForThePurchaseOfACar applicationForThePurchaseOfACar) {
-        this.applicationForThePurchaseOfACar = applicationForThePurchaseOfACar;
-    }
 
     public String getTelephone() {
         return telephone;
