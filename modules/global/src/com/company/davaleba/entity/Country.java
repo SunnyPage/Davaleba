@@ -2,6 +2,9 @@ package com.company.davaleba.entity;
 
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
+import com.haulmont.cuba.core.entity.annotation.OnDelete;
+import com.haulmont.cuba.core.global.DeletePolicy;
+import com.haulmont.cuba.security.entity.User;
 
 import javax.persistence.*;
 
@@ -14,14 +17,35 @@ public class Country extends StandardEntity {
     @Column(name = "NAME")
     protected String name;
 
+    @OnDelete(DeletePolicy.CASCADE)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "USER_ID")
+    protected User user;
+
     @Column(name = "CODE")
     protected String code;
 
-    @Column(name = "COUNTRY")
-    protected String country;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CAR_MANUFACTURERS_ID")
     protected CarManufacturers carManufacturers;
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "country")
+    protected ExtUser extUser;
+
+    public ExtUser getExtUser() {
+        return extUser;
+    }
+
+    public void setExtUser(ExtUser extUser) {
+        this.extUser = extUser;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public CarManufacturers getCarManufacturers() {
         return carManufacturers;
@@ -29,14 +53,6 @@ public class Country extends StandardEntity {
 
     public void setCarManufacturers(CarManufacturers carManufacturers) {
         this.carManufacturers = carManufacturers;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
     }
 
     public String getCode() {

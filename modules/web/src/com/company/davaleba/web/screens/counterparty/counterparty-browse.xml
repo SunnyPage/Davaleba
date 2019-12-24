@@ -43,6 +43,7 @@
                 <button id="createBtn" action="counterpartiesTable.create"/>
                 <button id="editBtn" action="counterpartiesTable.edit"/>
                 <button id="removeBtn" action="counterpartiesTable.remove"/>
+                <button id="TheNumberOfApplicationsForThePurchaseOfACar" action="counterpartiesTable.create"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">

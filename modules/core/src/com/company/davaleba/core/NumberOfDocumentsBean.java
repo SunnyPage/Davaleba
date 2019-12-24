@@ -16,9 +16,9 @@ public class NumberOfDocumentsBean {
 
     public Integer GetNumberOfDocuments(UUID CounterpartyId)
     {
-        //Query query = persistence.getEntityManager().createQuery(
-        //        "select count(*) from ApplicationForThePurchaseOfACar where counterparty = CounterpartyId");
-        //query.setParameter("CounterpartyId", CounterpartyId);
-        return (Integer)0;// query.getFirstResult();
+        Query query = persistence.getEntityManager().createQuery(
+                "select count(*) from ApplicationForThePurchaseOfACar where counterparty = CounterpartyId");
+        query.setParameter("CounterpartyId", CounterpartyId);
+        return (Integer) query.getFirstResult();
     }
 }
