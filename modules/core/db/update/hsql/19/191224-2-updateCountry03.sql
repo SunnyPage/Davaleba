@@ -1,0 +1,2 @@
+alter table DAVALEBA_COUNTRY add constraint FK_DAVALEBA_COUNTRY_ON_USER foreign key (USER_ID) references SEC_USER(ID);
+create index IDX_DAVALEBA_COUNTRY_ON_USER on DAVALEBA_COUNTRY (USER_ID);

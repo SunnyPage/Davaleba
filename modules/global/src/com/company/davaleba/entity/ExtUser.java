@@ -17,6 +17,18 @@ public class ExtUser extends User {
     @JoinColumn(name = "COUNTRY_ID")
     protected Country country;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "USER_ID")
+    protected User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public Country getCountry() {
         return country;
     }

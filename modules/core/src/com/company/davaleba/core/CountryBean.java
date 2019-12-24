@@ -27,6 +27,7 @@ public class CountryBean {
 
     @Inject
     private Persistence persistence;
+
     @Inject
     protected GlobalConfig globalConfig;
 
