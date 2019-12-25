@@ -14,8 +14,8 @@ public class GetCountryServiceBean implements GetCountryService {
 
     //@Transactional
     //@Override
-    public String GetCountry(UUID countryId)
+    public void GetCountry()
     {
-        return Country.GetCountry(countryId);
+        Country.GetCountry();
     }
 }
