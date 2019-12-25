@@ -33,4 +33,14 @@
     <view entity="davaleba_Country" name="country-view_1" extends="_local">
         <property name="extUser" view="_minimal"/>
     </view>
+    <view entity="davaleba_CarManufacturing" name="carManufacturers-view" extends="_local">
+        <property name="country" view="_minimal"/>
+        <property name="model" view="_minimal"/>
+        <property name="car" view="_minimal"/>
+    </view>
+    <view entity="davaleba_CarManufacturing" name="carManufacturers-view_1" extends="_local">
+        <property name="country" view="_minimal"/>
+        <property name="model" view="_minimal"/>
+        <property name="car" view="_minimal"/>
+    </view>
 </views>
