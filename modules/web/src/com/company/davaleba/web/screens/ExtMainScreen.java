@@ -1,9 +1,6 @@
 package com.company.davaleba.web.screens;
 
-import com.company.davaleba.entity.ExtUser;
 import com.company.davaleba.service.GetCountryService;
-import com.haulmont.cuba.core.config.defaults.Default;
-import com.haulmont.cuba.core.entity.ReferenceToEntity;
 import com.haulmont.cuba.core.global.*;
 import com.haulmont.cuba.gui.screen.Subscribe;
 import com.haulmont.cuba.gui.screen.UiController;
@@ -23,16 +20,11 @@ import java.util.UUID;
 @UiDescriptor("ext-main-screen.xml")
 public class ExtMainScreen extends MainScreen {
 
-    @Inject
-    private DataManager dataManager;
-
-    @Inject
-    private Persistence persistence;
+    //GetCountryService CountryService;
 
     @Subscribe
-    public void onBeforeShow(BeforeShowEvent event)
-    {
-        CountryService.GetCountry();
+    public void onBeforeShow(BeforeShowEvent event) {
+        //CountryService.GetCountry();
 
     }
 
@@ -41,12 +33,4 @@ public class ExtMainScreen extends MainScreen {
 
     @Inject
     protected PasswordEncryption passwordEncryption;
-
-    GetCountryService CountryService;
-
-    @Subscribe
-    public void onInit(InitEvent event)
-    {
-
-    }
 }

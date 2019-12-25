@@ -1,1 +1,0 @@
-update SEC_USER set DTYPE = 'davaleba_ExtUser' where DTYPE is null ;

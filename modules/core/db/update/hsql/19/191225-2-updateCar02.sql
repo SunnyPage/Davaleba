@@ -1,1 +1,0 @@
-alter table DAVALEBA_CAR add column APPLICATION_FOR_THE_PURCHASE_OF_A_CAR_ID varchar(36) ;

@@ -4,5 +4,6 @@
         <item screen="davaleba_ApplicationForThePurchaseOfACar.browse"/>
         <item screen="davaleba_Car.browse"/>
         <item screen="davaleba_Counterparty.browse"/>
+        <item screen="davaleba_Country.browse"/>
     </menu>
 </menu-config>
