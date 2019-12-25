@@ -43,4 +43,6 @@
         <property name="model" view="_minimal"/>
         <property name="car" view="_minimal"/>
     </view>
+    <view entity="davaleba_Colour" name="colour-view" extends="_local"/>
+    <view entity="davaleba_Colour" name="colour-view_1" extends="_local"/>
 </views>
