@@ -45,4 +45,12 @@
     </view>
     <view entity="davaleba_Colour" name="colour-view" extends="_local"/>
     <view entity="davaleba_Colour" name="colour-view_1" extends="_local"/>
+    <view entity="davaleba_Model" name="carModel-view" extends="_local">
+        <property name="carManufacturers" view="_minimal"/>
+        <property name="car" view="_minimal"/>
+    </view>
+    <view entity="davaleba_Model" name="carModel-view_1" extends="_local">
+        <property name="carManufacturers" view="_minimal"/>
+        <property name="car" view="_minimal"/>
+    </view>
 </views>

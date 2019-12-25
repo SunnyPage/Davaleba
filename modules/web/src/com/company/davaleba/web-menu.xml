@@ -7,5 +7,6 @@
         <item screen="davaleba_Country.browse"/>
         <item screen="davaleba_CarManufacturing.browse"/>
         <item screen="davaleba_Colour.browse"/>
+        <item screen="davaleba_Model.browse"/>
     </menu>
 </menu-config>
