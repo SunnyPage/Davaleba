@@ -18,7 +18,8 @@ public class Colour extends StandardEntity {
     @Column(name = "NAME", nullable = false, unique = true)
     protected String name;
 
-    @Column(name = "CODE")
+    @NotNull
+    @Column(name = "CODE", nullable = false, unique = true)
     protected String code;
 
     public String getCode() {

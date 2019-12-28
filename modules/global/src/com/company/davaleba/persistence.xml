@@ -13,5 +13,6 @@
         <class>com.company.davaleba.entity.ApplicationForThePurchaseOfACar</class>
         <class>com.company.davaleba.entity.Counterparty</class>
         <class>com.company.davaleba.entity.ExtUser</class>
+        <class>com.company.davaleba.entity.Components</class>
     </persistence-unit>
 </persistence>

@@ -7,9 +7,9 @@ import javax.annotation.Nullable;
 
 public enum TypeOfCar implements EnumClass<String> {
 
-    A("Crossover"),
-    B("Station wagon"),
-    C("Sedan");
+    CROSSOVER("Crossover"),
+    STATION_WAGON("Station wagon"),
+    SEDAN("Sedan");
 
     private String id;
 

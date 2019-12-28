@@ -34,7 +34,6 @@
             <columns>
                 <column id="name"/>
                 <column id="code"/>
-                <column id="extUser"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
