@@ -2,8 +2,11 @@ package com.company.davaleba.entity;
 
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
+import java.math.BigDecimal;
 import java.util.List;
 
 @NamePattern("%s|name")
@@ -19,19 +22,38 @@ public class Car extends StandardEntity {
     protected List<CarModel> carModel;
 
     @OneToMany(mappedBy = "car")
-    protected List<Assembly> assembly;
+    protected List<Characteristics> characteristics;
 
     @Column(name = "NAME")
     protected String name;
 
+    @Pattern(message = "{msg://davaleba_Car.yearOfIssue.validation.Pattern}", regexp = "####")
+    @Length(message = "{msg://davaleba_Car.yearOfIssue.validation.Length}", min = 4, max = 4)
     @Column(name = "YEAR_OF_ISSUE")
     protected String yearOfIssue;
 
     @Column(name = "CAR_COST")
-    protected String carCost;
+    protected BigDecimal carCost;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "APPLICATION_FOR_THE_PURCHASE_OF_A_CAR_ID")
     protected ApplicationForThePurchaseOfACar applicationForThePurchaseOfACar;
+
+    public void setCarCost(BigDecimal carCost) {
+        this.carCost = carCost;
+    }
+
+    public BigDecimal getCarCost() {
+        return carCost;
+    }
+
+    public List<Characteristics> getCharacteristics() {
+        return characteristics;
+    }
+
+    public void setCharacteristics(List<Characteristics> characteristics) {
+        this.characteristics = characteristics;
+    }
 
     public ApplicationForThePurchaseOfACar getApplicationForThePurchaseOfACar() {
         return applicationForThePurchaseOfACar;
@@ -39,14 +61,6 @@ public class Car extends StandardEntity {
 
     public void setApplicationForThePurchaseOfACar(ApplicationForThePurchaseOfACar applicationForThePurchaseOfACar) {
         this.applicationForThePurchaseOfACar = applicationForThePurchaseOfACar;
-    }
-
-    public String getCarCost() {
-        return carCost;
-    }
-
-    public void setCarCost(String carCost) {
-        this.carCost = carCost;
     }
 
     public String getYearOfIssue() {
@@ -59,18 +73,6 @@ public class Car extends StandardEntity {
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<Assembly> getAssembly() {
-        return assembly;
-    }
-
-    public void setAssembly(List<Assembly> assembly) {
-        this.assembly = assembly;
     }
 
     public List<CarModel> getCarModel() {

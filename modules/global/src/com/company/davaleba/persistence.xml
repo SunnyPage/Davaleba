@@ -6,13 +6,10 @@
         <class>com.company.davaleba.entity.CarManufacturers</class>
         <class>com.company.davaleba.entity.Colour</class>
         <class>com.company.davaleba.entity.CarModel</class>
-        <class>com.company.davaleba.entity.Assembly</class>
         <class>com.company.davaleba.entity.Car</class>
-        <class>com.company.davaleba.entity.LegalEntity</class>
-        <class>com.company.davaleba.entity.IndividualPerson</class>
         <class>com.company.davaleba.entity.ApplicationForThePurchaseOfACar</class>
         <class>com.company.davaleba.entity.Counterparty</class>
         <class>com.company.davaleba.entity.ExtUser</class>
-        <class>com.company.davaleba.entity.Components</class>
+        <class>com.company.davaleba.entity.Characteristics</class>
     </persistence-unit>
 </persistence>
